@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "schoolprojectone-223921",
+  "private_key_id": "4750389c9728f6e47cae05e60aa93f70a11b8821",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDYAydRsz/GHM/v\n9vFXu2IqINRaxA90ddnjqJF5+oKgmXE6tuqh4lJwiIYIaNVEkXGx90KXolXusl/O\nwDB/yx2rYLC4O+l5i9+Lu0JHKnBqm/AAw3bv8TP1C7nhVlT6aOa48LmograAN0JJ\nca6ybKdvoj+vKPwzALgtxfbc89GbbKJZlVgANOb4MqJzrM9izbL5/J0eZ5E8VlSQ\nZx9NlJKzQne78tsRQuD5HC6pK8phdXxxCSDkCrYQwcmpYwD5E6i8WLA7F/S4h/Tl\ntowejFZy9+G5LfdqReJKYbpe6w31dYYmIIyMOSb2TlQiBvtm5OMU9tOeLGUzIu+0\nuzjAoRYjAgMBAAECggEAa8Fy+U4ON7FCx2Vr8kRfDT3wQNECFqn9hhQecfdV93Bj\n7BK4TAYe8tUf640EKl7VlR4PwZ2w+VBQ+82iw/UaeVXUAiuc5c2xN76zqtWQW5Yr\nbO4U5E/yB8EQOkj7PilbQxGOw/FkweQO9J05tPb/tW/+Dc5HtNeciPTylzknrDxj\nLLun6hjD+QbBwcxoE8EJDOXjRxPGMJSjXvNeDotWGxYkUnnIOmelckVSFx1Jdl/T\nyS4XNhVQERnEtFuekmJoNDZdWKsmrlkjUNZHNlXKpsHQK+6ETLhVcvt/BvdRtdaG\nMY/HN1E9tHDNhlkx7F3VfAy9TkRrLyLhijrpDJoq2QKBgQD8vDwXxW1T8QGNGeEp\nNlafH3Fy4/6WLIvxahLwWdbxv9RrSig+L7Y4Bury4rXTL4+j1M1cEwyjgguB2Sbm\nhjpj5iBlnuFbFcWjUSCCZllCcyGJQ60gW6Qh9e6LloIjXwTJb/6QcDshLFmfpSCl\nNzWWjFBzl5TuRG4QC6fQExbS+wKBgQDazXr61FbKXT9iOAZnE+1hBjIJTg93up19\nw9mepMxHSrMHUIfJDjtEO/Q1DqDHS1JDPRzo1ONSepa9mXUlPDQUOU6ZpsTU1K0f\nwD6aDBqPkJ/RcF9v5E6E5cMA2GOmIL7YuHttT5KIV5k8muKVbd12D2BlCYjAWeb4\n27dg1eOg+QKBgAgUQFuGLSOEzcbj7+WwXf6CM883aJkGXYbfHDHgvVVHC5ROb5Dl\nV47c8b/H7YYNvCrBj7sExN+pNZL2DR9LZSxyW9DDznJp9MJuwnpIqUvNgGHx7uPc\n6hdH1FNUAV7+F5oU4W9elxVNZKQM1ElTxXvFioDXdKRVPat3o+qr4YvnAoGAMMYX\nQOyugCOzKmDUxIuDodowszRMbGMUEmHjE+MmiknTiLDh4+ahPX+j22PsYSCgMM7h\nr+Es30jma1NW8rrt3Qg9RjEPtWXHRcmj6tEB5rjVd2l2TMn22tcg1gJmjDTGdicB\nlIdlYbEtPn5EPg0kjdm1ojAy5LXlr9nCkfp76HkCgYEA7sXWYe4pxy53tTrSV+FM\njGT6oQFtdrDCajwKWTwq6wsVWy5YCCzpQjOhWvb4MyAWgpLXMYnuKJ+hQp5LIzJ3\ncvOAEr1fN/mweF61m7Yqbq+pT2gpsQ8/GYW6bvk+yMufmY1GWOAatCqGuDup/OIv\nkwo8740CohUhCtM+avxc2WU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "rupertservice@schoolprojectone-223921.iam.gserviceaccount.com",
+  "client_id": "110022191151858627030",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/rupertservice%40schoolprojectone-223921.iam.gserviceaccount.com"
+}
