@@ -1,0 +1,28 @@
+nav {
+    
+    background-size: 100%;
+    background-color: black;
+    block-size: 10%;
+}
+.navbar-brand {
+    color: cornsilk;
+    font-family: cursive;
+    text-align: center;
+}
+body {
+    background-size: 100%;
+    background-image: url("unnamed.jpg");
+}
+#two, #three {
+    border-image-source: url("Frame_Border_Transparent_PNG_Clip_Art.png");
+ 
+}
+
+button{
+    color: cornsilk;
+    background-color: black;
+    position: relative;
+    right:130px;
+    top:500px;
+
+}
