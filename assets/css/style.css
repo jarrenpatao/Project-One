@@ -69,12 +69,12 @@ input {
 img {
     border-radius: 5px 5px 0 0;
 }
-#card1 button:hover {
+#ruTalk button:hover {
     opacity: 0.7;
     font-family: cursive;
   }
 
-#card1 {
+#ruTalk {
     background-color:cornsilk;
     position: relative;
     top: 40px;
@@ -85,7 +85,7 @@ img {
 }
 
 
-#card2 {
+#ruAnswer {
     background-color:cornsilk;
     position: relative;
     top: 40px;
