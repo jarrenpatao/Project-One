@@ -29,6 +29,8 @@ $("#rupert-button").on("click", function (event) {
             data: thatData
         }).then(function (response) {
             console.log(response);
+            var rupertAnswer = response.queryResult.fulfillmentText
+                $("#rupert-answer").text(rupertAnswer);
             
   if (response.queryResult.intent.displayName === "Popular") {
     queryWanted = searchTerms.popular
@@ -110,9 +112,7 @@ if (response.queryResult.intent.displayName === "Best Western") {
     queryWanted = searchTerms.bestWestern
     movieSearch(queryWanted)
 }
-if (response.queryResult.fulfillmentText === "Here's Johnny!") {
-    $("#ruTalk").append(response.queryResult.fulfillmentText);
-}  
+
 
         }).catch(function (err) {
             console.log(err.responseText)
