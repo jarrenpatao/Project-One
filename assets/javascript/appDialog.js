@@ -11,17 +11,92 @@ function robotTalk() {
     $.ajax({
         url: "https://dialogflow.googleapis.com/v2/projects/rupert-1e1d0/agent/sessions/491284b3-f02d-993f-4d64-b7cdd12f9cca:detectIntent",
         method: "POST",
-        headers: { 'Authorization': "Bearer ya29.c.ElpjBs2KJBkkNFd9Qb3HUGJ_iShnTBYx4Qi2fn-2u17FJemtQyS-iHzNSf8GBWotfmmj0xDfdZwLg1Yhxilo1aj-IA3Q_ECd01z6B6UYpvzkK8CA-vrb_XwzA8U" },
+        headers: { 'Authorization': "Bearer ya29.c.ElpjBhTS-Eh_OF7aNdeRgF1h4xUjaCATPqkuplBtzDave2YBwoeYnZR37N2Y8A1F9dCIaD0Y7Ijl5Tu3jAC6YwoZhz8h9R95k-oc5UKZGpYc7i2mb_XkYjXVtKA"},
         // get jarren's $(gcloud auth application-default print-access-token)
         contentType: "application/json; charset=utf-8",
         data: thatData
     }).then(function (response) {
         console.log(response);
+        if (response.queryResult.intent.displayName === "Popular") {
+            queryWanted = searchTerms.popular
+            movieSearch(queryWanted)
+        }
+        if (response.queryResult.intent.displayName === "Popular Kids") {
+            queryWanted = searchTerms.popularKids
+            movieSearch(queryWanted)
+        }
+        if (response.queryResult.intent.displayName === "Best of Year") {
+            queryWanted = searchTerms.bestOfYear
+            movieSearch(queryWanted)
+        }
         if (response.queryResult.intent.displayName === "Best Action") {
             queryWanted = searchTerms.bestAction
             movieSearch(queryWanted)
         }
-
+        if (response.queryResult.intent.displayName === "Best Animation") {
+            queryWanted = searchTerms.bestAnimation
+            movieSearch(queryWanted)
+        }
+        if (response.queryResult.intent.displayName === "Best Comedy") {
+            queryWanted = searchTerms.bestComedies
+            movieSearch(queryWanted)
+        }
+        if (response.queryResult.intent.displayName === "Best Crime") {
+            queryWanted = searchTerms.bestCrime
+            movieSearch(queryWanted)
+        }
+        if (response.queryResult.intent.displayName === "Best Documentary") {
+            queryWanted = searchTerms.bestDocumentary
+            movieSearch(queryWanted)
+        }
+        if (response.queryResult.intent.displayName === "Best Drama") {
+            queryWanted = searchTerms.bestDramas
+            movieSearch(queryWanted)
+        }
+        if (response.queryResult.intent.displayName === "Best Family") {
+            queryWanted = searchTerms.bestFamily
+            movieSearch(queryWanted)
+        }
+        if (response.queryResult.intent.displayName === "Best Fantasy") {
+            queryWanted = searchTerms.bestFantasy
+            movieSearch(queryWanted)
+        }
+        if (response.queryResult.intent.displayName === "Best History") {
+            queryWanted = searchTerms.bestHistory
+            movieSearch(queryWanted)
+        }
+        if (response.queryResult.intent.displayName === "Best Horror") {
+            queryWanted = searchTerms.bestHorror
+            movieSearch(queryWanted)
+        }
+        if (response.queryResult.intent.displayName === "Best Musical") {
+            queryWanted = searchTerms.bestMusical
+            movieSearch(queryWanted)
+        }
+        if (response.queryResult.intent.displayName === "Best Mystery") {
+            queryWanted = searchTerms.bestMystery
+            movieSearch(queryWanted)
+        }
+        if (response.queryResult.intent.displayName === "Best Romantic Comedy") {
+            queryWanted = searchTerms.bestRomanticComedies
+            movieSearch(queryWanted)
+        }
+        if (response.queryResult.intent.displayName === "Best Sci-Fi") {
+            queryWanted = searchTerms.bestScienceFiction
+            movieSearch(queryWanted)
+        }
+        if (response.queryResult.intent.displayName === "Best Thriller") {
+            queryWanted = searchTerms.bestThriller
+            movieSearch(queryWanted)
+        }
+        if (response.queryResult.intent.displayName === "Best War") {
+            queryWanted = searchTerms.bestWar
+            movieSearch(queryWanted)
+        }
+        if (response.queryResult.intent.displayName === "Best Western") {
+            queryWanted = searchTerms.bestWestern
+            movieSearch(queryWanted)
+        }
     }).catch(function (err) {
         console.log(err.responseText)
     })
