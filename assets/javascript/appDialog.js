@@ -1,11 +1,13 @@
 var rupert
 $("#rupert-button").on("click", function (event) {
     event.preventDefault();
+    
     if ($("#rupert-input").val().trim() === ""){
       return
     }
     else {
         rupert = $("#rupert-input").val()
+        $('#ruAnswer').empty();
 
     function robotTalk() {
         var thatData = JSON.stringify({
@@ -21,7 +23,7 @@ $("#rupert-button").on("click", function (event) {
         $.ajax({
             url: "https://dialogflow.googleapis.com/v2/projects/rupert-1e1d0/agent/sessions/491284b3-f02d-993f-4d64-b7cdd12f9cca:detectIntent",
             method: "POST",
-            headers: { 'Authorization': "Bearer ya29.c.ElpjBhTS-Eh_OF7aNdeRgF1h4xUjaCATPqkuplBtzDave2YBwoeYnZR37N2Y8A1F9dCIaD0Y7Ijl5Tu3jAC6YwoZhz8h9R95k-oc5UKZGpYc7i2mb_XkYjXVtKA" },
+            headers: { 'Authorization': "Bearer ya29.c.ElpjBvZL6YT1_Pd6Q5--vDTriMMNUX207f_QYR1FqXInBibx-tR8LFOuPi-h4--yBHU_w6nytvxCPA_kRucB_NVFi60sBu-p0w-czFgA3wAr0oYklet7umJgLew" },
             // get jarren's $(gcloud auth application-default print-access-token)
             contentType: "application/json; charset=utf-8",
             data: thatData
@@ -108,17 +110,21 @@ if (response.queryResult.intent.displayName === "Best Western") {
     queryWanted = searchTerms.bestWestern
     movieSearch(queryWanted)
 }
-    
+if (response.queryResult.fulfillmentText === "Here's Johnny!") {
+    $("#ruTalk").append(response.queryResult.fulfillmentText);
+}  
+
         }).catch(function (err) {
             console.log(err.responseText)
         })
+
     };
     
     function movieSearch(queryWanted) {
         
         var queryURL =
             "https://api.themoviedb.org/3/discover/movie?api_key=2ed91169ed8d33d4c63c2dd7b3177958&language=en-US&"
-            + queryWanted
+            + queryWanted;
     
     
         $.ajax({
@@ -128,7 +134,10 @@ if (response.queryResult.intent.displayName === "Best Western") {
             console.log(response)
             for (var i = 0; i < response.results.length; i++) {
                 var name = response.results[i].original_title
-                console.log(name)
+                var poster = "<img src=" + "'https://image.tmdb.org/t/p/w500" + response.results[i].poster_path + "'</img>";
+                // console.log(name)
+                $("#ruAnswer").append(name + poster + "<hr>");
+                
             }
         });
     }
