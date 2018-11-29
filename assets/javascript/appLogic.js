@@ -1,6 +1,5 @@
 var currentResponseId
 var queryWanted = null
-
 // we need some basic things the user can search for.
 var Year = 2010 //or whatever year user enters into chatbot
 var searchTerms = {
