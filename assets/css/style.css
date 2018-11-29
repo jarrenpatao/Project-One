@@ -15,14 +15,49 @@ body {
 }
 #two, #three {
     border-image-source: url("Frame_Border_Transparent_PNG_Clip_Art.png");
- 
+ /* I'll just leave the border image here--it doesn't work though.. */
 }
 
 button{
-    color: cornsilk;
-    background-color: black;
-    position: relative;
-    right:130px;
-    top:500px;
+    color: cornsilk!important;
+    background-color: black!important;
+    position: relative!important;
+    right:130px!important;
+    top:500px!important;
 
 }
+
+
+.container a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* On screens that are 600px wide or less, make the menu links stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .container a {
+        float: none;
+        width: 100%;
+    }
+}
+
+
+#one{width:100px;min-height:100px;float:left;}
+#two{width:100px;display:inline-block;height:100px}
+#three{width:100px;display:inline-block;height:100px;}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+
+
