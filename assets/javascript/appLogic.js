@@ -3,6 +3,7 @@ var queryWanted = null
 // we need some basic things the user can search for.
 var Year = 2010 //or whatever year user enters into chatbot
 var searchTerms = {
+    inTheaters: "/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2018-11-29",
     popular: "sort_by=popularity.desc", 
     popularKids: "certification_country=US&certification.lte=PG&sort_by=popularity.desc", 
     bestOfYear: "primary_release_year=" + Year + "&sort_by=popularity.desc",
