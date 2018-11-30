@@ -53,27 +53,32 @@ h2 {
 
 
 /* MEDIA BREAKPOINTS */
-/* On screens that are 600px wide or less, make the menu links stack on top of each other instead of next to each other */
+/* On screens that are 600px wide or less, make the menu links stack on top of each other instead of next to each other
 @media screen and (max-width: 600px) {
     .container a {
         float: none;
         width: 100%;
     }
-}
+} */
+
+
 
 /* ID's */
 #one {
-  width:100px;
+  /* width:100px; */
   min-height:100px;
-  float:left;
+  /* float:left; */
   color:black;
+  /* display: flex; */
+
 }
 #two, #three {
-  width:100px;
+  /* width:100px; */
   display:inline-block;
-  height:100px;
+  min-height:100px;
   color:black;
   border-image-source: url("Frame_Border_Transparent_PNG_Clip_Art.png");
+  /* display: flex; */
 }
 #ruTalk button:hover {
     opacity: 0.7;
@@ -82,6 +87,8 @@ h2 {
 #ruAnswer, #card3 {
   height: 531px;
   overflow: auto;
+  background-color: black;
+ 
 }
 #chatty {
   height: 250px;
