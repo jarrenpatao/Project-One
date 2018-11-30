@@ -31,7 +31,7 @@ img {
 .container a {
     float: left;
     display: block;
-    color: white;
+    /* color: white; */
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -40,6 +40,7 @@ img {
   color: cornsilk;
   font-family: cursive;
 }
+
 .tmdb-attribution {
   color: white;
 }
@@ -68,7 +69,7 @@ img {
   color:black;
   border-image-source: url("Frame_Border_Transparent_PNG_Clip_Art.png");
 }
-#card1 button:hover {
+#ruTalk button:hover {
     opacity: 0.7;
     font-family: cursive;
   }
@@ -108,4 +109,12 @@ img {
 #tmdb-logo{
   zoom: 50%;
   float:right;
+}
+
+h2 {
+    color: cornsilk;
+}
+
+#card3 {
+    background-color: black;
 }
