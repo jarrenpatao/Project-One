@@ -17,6 +17,9 @@ function resetText() {
 resetText();
 
 var rupert
+var movie1
+var movie2
+var movie3
 $("#rupert-button").on("click", function (event) {
     event.preventDefault();
 
@@ -26,6 +29,7 @@ $("#rupert-button").on("click", function (event) {
     else {
         rupert = $("#rupert-input").val()
         $('#ruAnswer').empty();
+        $('#card3').empty();
 
         var message = {
             text: rupert,
@@ -48,8 +52,7 @@ $("#rupert-button").on("click", function (event) {
             $.ajax({
                 url: "https://dialogflow.googleapis.com/v2/projects/rupert-1e1d0/agent/sessions/491284b3-f02d-993f-4d64-b7cdd12f9cca:detectIntent",
                 method: "POST",
-
-                headers: { 'Authorization': "Bearer ya29.c.ElpkBmbCWCGCq7fR86q98Uz7_eQLfWpPTxBEjwonOPSClqHEz1SOctmvou0vIzEO0hDm1e7rTzb70cxuirOi2Lu4YVUAZx0Y9CjDuqWNWBct1uDtGv0c5vGPVwo" },
+                headers: { 'Authorization': "Bearer ya29.c.ElpkBniogM8FzeNJHfCg5Sc_xAuOEMumXPnY7hj7fivIYprU5U5tY9yajo04e0TTNuMxRoljRRYOH-eqCXldD_ndjlVHfeqFX0fdOq3Ot5xb6I-dKis2MoIQy6A" },
 
                 // get jarren's $(gcloud auth application-default print-access-token)
                 contentType: "application/json; charset=utf-8",
@@ -168,12 +171,16 @@ $("#rupert-button").on("click", function (event) {
                 method: "GET"
             }).then(function (response) {
                 console.log(response)
-                for (var i = 0; i < response.results.length; i++) {
+                for (var i = 0; i < 3; i++) {
                     var name = response.results[i].original_title
                     var poster = "<img src=" + "'https://image.tmdb.org/t/p/w500'" + response.results[i].poster_path + "</img>";
                     // console.log(name)
                     $("#ruAnswer").append(name + poster + "<hr>");
-
+                    var movieID = response.results[i].id
+                    // movie1 = response.results[0].id
+                    //call trailers api with an ajax function
+                    movieTrailers(movieID)
+                    // movieTrailers(movie1)
                 }
             });
         }
@@ -199,6 +206,17 @@ $("#rupert-button").on("click", function (event) {
     }
 
 });
+
+
+function movieTrailers(movieID){
+    $.ajax({
+        url: "https://api.themoviedb.org/3/movie/" + movieID +"/videos" + "?api_key=2ed91169ed8d33d4c63c2dd7b3177958&language=en-US",
+        method: "GET"
+    }).then(function (response){
+        $("#card3").append("<iframe width='560' height='315' src='https://www.youtube.com/embed/" + response.results[0].key + "'frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>")
+        console.log(response.results[0].key)
+    })
+}
 
 database.ref().on("child_added", function (childSnapshot) {
 
