@@ -9,8 +9,10 @@ body {
     background-image: url("unnamed.jpg");
 }
 button {
+  margin: 5px;
   color: cornsilk;
   background-color:black;
+  border-radius: 6px;
 }
 input {
   height: 100px;
@@ -57,13 +59,13 @@ img {
   width:100px;
   min-height:100px;
   float:left;
-  color:cornsilk;
+  color:black;
 }
 #two, #three {
   width:100px;
   display:inline-block;
   height:100px;
-  color:cornsilk;
+  color:black;
   border-image-source: url("Frame_Border_Transparent_PNG_Clip_Art.png");
 }
 #card1 button:hover {
@@ -119,6 +121,9 @@ img {
 #ruAnswer img {
   max-height: 100%;
   max-width: 100%;
+}
+#ruLogo {
+  margin-left: 25%;
 }
 
 #tmdb-logo{
