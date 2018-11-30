@@ -1,3 +1,6 @@
+var textarea = document.getElementById('rupert-input');
+textarea.scrollTop = textarea.scrollHeight;
+
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyC9oG6iJbZAA91mZRFG7aLBUrlfZ9Be-c0",
@@ -212,7 +215,7 @@ function movieTrailers(movieID){
 database.ref().on("child_added", function (childSnapshot) {
 
     // Store everything into a variable.
-    var ans = $("#rupert-answer").append(childSnapshot.val().text)
+    var ans = $("#chatty").append(childSnapshot.val().text)
     ans.append($("<hr>"))
     $("#rupert-input").val("")
     //append message to bubble on left side

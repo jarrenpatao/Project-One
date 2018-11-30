@@ -23,71 +23,70 @@
 </head>
 
 <body>
-    
-      <nav class="navbar fixed-top ">
-          <a class="navbar-brand" href="#">Rupert</a>
-        </nav>
-        <br>
-        <br>
-        <br> 
-        <div class="container">
 
   <nav class="navbar fixed-top ">
     <a class="navbar-brand" href="#">Rupert</a>
   </nav>
-
+  <br>
+  <br>
+  <br>
   <div class="container">
-    <div class="row">
 
-      <!-- User Chat Window -->
-      <div class="col-lg-4" id="one">
-        <h2>SEARCH</h2>
-        <div class="card" id="ruTalk">
-          <form>
+    <nav class="navbar fixed-top ">
+      <a class="navbar-brand" href="#">Rupert</a>
+    </nav>
 
-            <img id="ruLogo" src="assets/images/rupercopy.png" width="30%">
+    <div class="container">
+      <div class="row">
 
-            <hr>
-            <div id="chatty">
-            <div id="rupert-answer">
-              <!-- Dynamic Fill: Rupert's responses -->
-            </div>
-            </div>
-            <hr>
-
+        <!-- User Chat Window -->
+        <div class="col-lg-4" id="one">
+          <h2>SEARCH</h2>
+          <div class="card" id="ruTalk">
+            <form>
             <p class="form-group">
-              <input class="form-control" id="rupert-input" placeholder="Enter something to ask Rupert" type="text" autocomplete="off">
+
+              <img id="ruLogo" src="assets/images/rupercopy.png" width="30%">
+
+
+
+              <input class="form-control" id="rupert-input" placeholder="Ask Rupert!" type="text" autocomplete="off">
               <button id="rupert-button">
                 ~ Show Me The Magic ~
               </button>
+              <div id="chatty">
+
+                <!-- Dynamic Fill: Rupert's responses -->
+              </div>
             </p>
 
-          </form>
+            </form>
+          </div>
         </div>
 
 
 
 
+
+
+        <div class="col-lg-4" id="two">
+          <h2>MOVIES (scroll down)</h2>
+          <div class="movieResults">
+            <div class="card" id="ruAnswer">
+              <!-- Dynamic Fill: Movie Data -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4" id="three">
+          <h2>TRAILERS (scroll down)</h2>
+          <div class="card" id="card3">
+            <!-- Dynamic Fill: Movies Nearby -->
+          </div>
+        </div>
       </div>
 
-      <div class="col-lg-4" id="two">
-        <h2>MOVIES (scroll down)</h2>
-        <div class="movieResults">
-          <div class="card" id="ruAnswer">
-          <!-- Dynamic Fill: Movie Data -->
-        </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4" id="three">
-        <h2>TRAILERS (scroll down)</h2>
-        <div class="card" id="card3">
-          <!-- Dynamic Fill: Movies Nearby -->
-        </div>
-      </div>
     </div>
-
-
     <div class="tmdb-attribution">
       <p>This product uses the TMDb API but is not endorsed or certified by TMDb.</p>
     </div>
