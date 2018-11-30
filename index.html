@@ -5,21 +5,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Project One App!</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
   <!-- Compiled and minified CSS -->
-<link rel=“stylesheet” href=“https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css“>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-<script src="assets/javascript/appLogic.js"></script>
+  <link rel=“stylesheet” href=“https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css“> <link
+    rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <script src="assets/javascript/appLogic.js"></script>
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="assets/images/rupercopy.png" type="image/x-icon" />
-  <!-- can add a favicon here <link rel="icon" href=""> -->
 </head>
 
 <body>
@@ -32,54 +32,73 @@
         <br> 
         <div class="container">
 
-    <div class="row">
-    
-      <div class="col-sm-4" id="one">SEARCH
+  <nav class="navbar fixed-top ">
+    <a class="navbar-brand" href="#">Rupert</a>
+  </nav>
 
+  <br><br><br>
+
+  <div class="container">
+    <div class="row">
+
+      <!-- User Chat Window -->
+      <div class="col-md-4" id="one">
+        <h2>SEARCH</h2>
         <div class="card" id="ruTalk">
           <form>
-            
-            <img src="assets/images/rupercopy.png" width="50%">
-              <p class="form-group">
-                
-                <input class="form-control" id="rupert-input" placeholder="Enter something to ask Rupert" type="text">
-                <br>
-                <br>
-              <button id="rupert-button" >Show Me The Magic>>>
-                </button></p>
-                <div id="rupert-answer"></div>
-            </form>
+
+            <img id="ruLogo" src="assets/images/rupercopy.png" width="50%">
+
+            <hr>
+            <div id="rupert-answer">
+              <!-- Dynamic Fill: Rupert's responses -->
             </div>
-        
-  
-                
-      
+            <hr>
+
+            <p class="form-group">
+              <input class="form-control" id="rupert-input" placeholder="Enter something to ask Rupert" type="text">
+              <button id="rupert-button">
+                ~ Show Me The Magic ~
+              </button>
+            </p>
+
+          </form>
+        </div>
+
+
+
+
       </div>
-     
-      <div class="col-sm-4" id="two">
-        MOVIES
+
+      <div class="col-md-4" id="two">
+        <h2>MOVIES</h2>
         <div class="card" id="ruAnswer">
+          <!-- Dynamic Fill: Movie Data -->
+        </div>
       </div>
-      </div>
-      
-   
-      <div class="col-sm-4" id="three">
-        THEATERS
-        <div class="card" id="card3"></div>
 
+      <div class="col-md-4" id="three">
+        <h2>THEATERS</h2>
+        <div class="card" id="card3">
+          <!-- Dynamic Fill: Movies Nearby -->
+        </div>
       </div>
-      </div>
-      <!-- <footer>This product uses the TMDb API but is not endorsed or certified by TMDb.
-        <img src="assets/css/logo.png" width="20px" height="20px">
-      </footer> -->
-   
+    </div>
 
-<!-- <img src="assets/images/tmdblogogreen.png">
-<p class="tmdb-attribution">This product uses the TMDb API but is not endorsed or certified by TMDb.</p> -->
+    <!-- <footer id="footer">
+      <p>This product uses the TMDb API but is not endorsed or certified by TMDb.</p>
+      <img src="assets/css/logo.png">
+    </footer> -->
 
-  <script src="assets/javascript/appLogic.js"></script>
-  <script src="assets/javascript/ajaxglu.js"></script>
-  <script src="assets/javascript/appDialog.js"></script>
+    <div class="tmdb-attribution">
+      <p>This product uses the TMDb API but is not endorsed or certified by TMDb.</p>
+    </div>
+    <img id="tmdb-logo" src="assets/images/tmdblogogreen.png">
+
+
+    <script src="assets/javascript/appLogic.js"></script>
+    <script src="assets/javascript/ajaxglu.js"></script>
+    <script src="assets/javascript/appDialog.js"></script>
 
 
 </body>

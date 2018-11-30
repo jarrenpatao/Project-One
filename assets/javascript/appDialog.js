@@ -57,7 +57,6 @@ $("#rupert-button").on("click", function (event) {
                 var rupertAnswer = response.queryResult.fulfillmentText
                 // $("#rupert-answer").text(rupertAnswer);
 
-
                 var message = {
                     text: rupertAnswer,
                     speaker: "rupert",
@@ -193,7 +192,7 @@ $("#rupert-button").on("click", function (event) {
         }).then(function (response) {
             console.log(response)
         });
-        robotTalk()
+        robotTalk();
     }
 });
 
