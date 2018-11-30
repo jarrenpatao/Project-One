@@ -48,7 +48,9 @@ $("#rupert-button").on("click", function (event) {
             $.ajax({
                 url: "https://dialogflow.googleapis.com/v2/projects/rupert-1e1d0/agent/sessions/491284b3-f02d-993f-4d64-b7cdd12f9cca:detectIntent",
                 method: "POST",
-                headers: { 'Authorization': "Bearer ya29.c.ElpkBniogM8FzeNJHfCg5Sc_xAuOEMumXPnY7hj7fivIYprU5U5tY9yajo04e0TTNuMxRoljRRYOH-eqCXldD_ndjlVHfeqFX0fdOq3Ot5xb6I-dKis2MoIQy6A" },
+
+                headers: { 'Authorization': "Bearer ya29.c.ElpkBmbCWCGCq7fR86q98Uz7_eQLfWpPTxBEjwonOPSClqHEz1SOctmvou0vIzEO0hDm1e7rTzb70cxuirOi2Lu4YVUAZx0Y9CjDuqWNWBct1uDtGv0c5vGPVwo" },
+
                 // get jarren's $(gcloud auth application-default print-access-token)
                 contentType: "application/json; charset=utf-8",
                 data: thatData
@@ -168,32 +170,34 @@ $("#rupert-button").on("click", function (event) {
                 console.log(response)
                 for (var i = 0; i < response.results.length; i++) {
                     var name = response.results[i].original_title
-                    var poster = "<img src=" + "'https://image.tmdb.org/t/p/w500" + response.results[i].poster_path + "'</img>";
+                    var poster = "<img src=" + "'https://image.tmdb.org/t/p/w500'" + response.results[i].poster_path + "</img>";
                     // console.log(name)
                     $("#ruAnswer").append(name + poster + "<hr>");
 
                 }
             });
         }
-        $.ajax({
-            url: "https://cors-anywhere.herokuapp.com/https://api-gate2.movieglu.com/filmsComingSoon/?n=10",
-            method: "GET",
-            dataType: "json",
-            headers: {
-                'api-version': "v200",
-                'authorization': "Basic QlVTSTpyVzRYWG9UWE1rRUk=",
-                'x-api-key': "f3qzMeA36w6Saoxh90qaC8eIGX0kjJCgyysC3Uph",
-                'device-datetime': "2018-11-27T13:26:30.147Z",
-                'geolocation': "37.872; -122.272",
-                'territory': "US",
-                'client': "BUSI"
-            }
-            // processData: false
-        }).then(function (response) {
-            console.log(response)
-        });
-        robotTalk();
+
+        // $.ajax({
+        //     url: "https://cors-anywhere.herokuapp.com/https://api-gate2.movieglu.com/filmsComingSoon/?n=10",
+        //     method: "GET",
+        //     dataType: "json",
+        //     headers: {
+        //         'api-version': "v200",
+        //         'authorization': "Basic QlVTSTpyVzRYWG9UWE1rRUk=",
+        //         'x-api-key': "f3qzMeA36w6Saoxh90qaC8eIGX0kjJCgyysC3Uph",
+        //         'device-datetime': "2018-11-27T13:26:30.147Z",
+        //         'geolocation': "37.872; -122.272",
+        //         'territory': "US",
+        //         'client': "BUSI"
+        //     }
+        //     processData: false ***COMMENT THIS LINE OUT***
+        // }).then(function (response) {
+        //     console.log(response)
+        // });
+        robotTalk()
     }
+
 });
 
 database.ref().on("child_added", function (childSnapshot) {
@@ -205,4 +209,5 @@ database.ref().on("child_added", function (childSnapshot) {
     //append message to bubble on left side
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
+
 });
