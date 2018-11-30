@@ -17,9 +17,6 @@ function resetText() {
 resetText();
 
 var rupert;
-var movie1;
-var movie2;
-var movie3;
 $("#rupert-button").on("click", function (event) {
     event.preventDefault();
 
@@ -60,7 +57,6 @@ $("#rupert-button").on("click", function (event) {
             }).then(function (response) {
                 console.log(response);
                 var rupertAnswer = response.queryResult.fulfillmentText
-                // $("#rupert-answer").text(rupertAnswer);
 
                 var message = {
                     text: rupertAnswer,
@@ -189,23 +185,6 @@ $("#rupert-button").on("click", function (event) {
             });
         }
 
-        // $.ajax({
-        //     url: "https://cors-anywhere.herokuapp.com/https://api-gate2.movieglu.com/filmsComingSoon/?n=10",
-        //     method: "GET",
-        //     dataType: "json",
-        //     headers: {
-        //         'api-version': "v200",
-        //         'authorization': "Basic QlVTSTpyVzRYWG9UWE1rRUk=",
-        //         'x-api-key': "f3qzMeA36w6Saoxh90qaC8eIGX0kjJCgyysC3Uph",
-        //         'device-datetime': "2018-11-27T13:26:30.147Z",
-        //         'geolocation': "37.872; -122.272",
-        //         'territory': "US",
-        //         'client': "BUSI"
-        //     }
-        //     processData: false ***COMMENT THIS LINE OUT***
-        // }).then(function (response) {
-        //     console.log(response)
-        // });
         robotTalk()
     }
 
