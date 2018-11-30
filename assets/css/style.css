@@ -120,3 +120,10 @@ img {
   max-height: 100%;
   max-width: 100%;
 }
+
+#tmdb-logo{
+    zoom: 50%;
+    float:right;
+}.tmdb-attribution{
+    text-align: right;
+}
