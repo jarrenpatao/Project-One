@@ -16,15 +16,15 @@ function resetText() {
 }
 resetText();
 
-var rupert
-var movie1
-var movie2
-var movie3
+var rupert;
+var movie1;
+var movie2;
+var movie3;
 $("#rupert-button").on("click", function (event) {
     event.preventDefault();
 
     if ($("#rupert-input").val().trim() === "") {
-        return
+        return;
     }
     else {
         rupert = $("#rupert-input").val()
@@ -52,7 +52,7 @@ $("#rupert-button").on("click", function (event) {
             $.ajax({
                 url: "https://dialogflow.googleapis.com/v2/projects/rupert-1e1d0/agent/sessions/491284b3-f02d-993f-4d64-b7cdd12f9cca:detectIntent",
                 method: "POST",
-                headers: { 'Authorization': "Bearer ya29.c.ElpkBohOMOpw6IJjQK1o9mCLrFhrI0bcYTXRRxeFmvalPo2Z_3uAv3UxPkeynlG1XZuy0AgxwkwSkTs1gqG-d40w6K-zPyddCgURUZ0fC6vX4vpK5_EBAO8jAds" },
+                headers: { 'Authorization': "Bearer ya29.c.ElpkBlINVYQXsVc11iK4FwYtbrBrG-ku_chSet6QkWAVDMN3Cg2d2rFbsT-0gpD5WEzf0M086Ql5fWDO19CRvPlB1wdtFK9NHH6C9DEnZI2CEjIPu7F3nuHpKF8" },
 
                 // get jarren's $(gcloud auth application-default print-access-token)
                 contentType: "application/json; charset=utf-8",
