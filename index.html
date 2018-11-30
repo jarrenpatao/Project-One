@@ -11,7 +11,7 @@
   <link rel=“stylesheet” href=“https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css“> <link
     rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
@@ -56,7 +56,7 @@
             <hr>
 
             <p class="form-group">
-              <input class="form-control" id="rupert-input" placeholder="Enter something to ask Rupert" type="text">
+              <input class="form-control" id="rupert-input" placeholder="Enter something to ask Rupert" type="text" autocomplete="off">
               <button id="rupert-button">
                 ~ Show Me The Magic ~
               </button>
@@ -71,7 +71,7 @@
       </div>
 
       <div class="col-lg-4" id="two">
-        <h2>MOVIES</h2>
+        <h2>MOVIES (scroll down)</h2>
         <div class="movieResults">
           <div class="card" id="ruAnswer">
           <!-- Dynamic Fill: Movie Data -->
@@ -80,7 +80,7 @@
       </div>
 
       <div class="col-lg-4" id="three">
-        <h2>TRAILERS</h2>
+        <h2>TRAILERS (scroll down)</h2>
         <div class="card" id="card3">
           <!-- Dynamic Fill: Movies Nearby -->
         </div>
