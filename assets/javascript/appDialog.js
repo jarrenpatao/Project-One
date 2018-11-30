@@ -1,3 +1,21 @@
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyC9oG6iJbZAA91mZRFG7aLBUrlfZ9Be-c0",
+    authDomain: "rupert-1e1d0.firebaseapp.com",
+    databaseURL: "https://rupert-1e1d0.firebaseio.com",
+    projectId: "rupert-1e1d0",
+    storageBucket: "rupert-1e1d0.appspot.com",
+    messagingSenderId: "171909528066"
+};
+firebase.initializeApp(config);
+
+var database = firebase.database();
+
+function resetText() {
+    database.ref().remove();
+}
+resetText();
+
 var rupert
 $("#rupert-button").on("click", function (event) {
     event.preventDefault();
@@ -8,6 +26,13 @@ $("#rupert-button").on("click", function (event) {
     else {
         rupert = $("#rupert-input").val()
         $('#ruAnswer').empty();
+
+        var message = {
+            text: rupert,
+        };
+        // push to firebase
+        database.ref().push(message);
+        // test
 
         function robotTalk() {
             var thatData = JSON.stringify({
@@ -23,14 +48,23 @@ $("#rupert-button").on("click", function (event) {
             $.ajax({
                 url: "https://dialogflow.googleapis.com/v2/projects/rupert-1e1d0/agent/sessions/491284b3-f02d-993f-4d64-b7cdd12f9cca:detectIntent",
                 method: "POST",
-                headers: { 'Authorization': "Bearer ya29.c.ElpkBsCedXMKqHwpmZj0PZUHsGELLqo3_fYFfMk91kkhrcc7ETmHcv3eV2HKngrtnLJD-3CQapRpCYIGqlPe9_ocSzAjUeW_hm37ah1s7BPmEv2gCtLQLaV-LbE" },
+                headers: { 'Authorization': "Bearer ya29.c.ElpkBniogM8FzeNJHfCg5Sc_xAuOEMumXPnY7hj7fivIYprU5U5tY9yajo04e0TTNuMxRoljRRYOH-eqCXldD_ndjlVHfeqFX0fdOq3Ot5xb6I-dKis2MoIQy6A" },
                 // get jarren's $(gcloud auth application-default print-access-token)
                 contentType: "application/json; charset=utf-8",
                 data: thatData
             }).then(function (response) {
                 console.log(response);
                 var rupertAnswer = response.queryResult.fulfillmentText
-                $("#rupert-answer").text(rupertAnswer);
+                // $("#rupert-answer").text(rupertAnswer);
+
+                var message = {
+                    text: rupertAnswer,
+                    speaker: "rupert",
+                };
+
+                // push to firebase
+                database.ref().push(message);
+
 
                 if (response.queryResult.intent.displayName === "Popular") {
                     queryWanted = searchTerms.popular
@@ -158,6 +192,17 @@ $("#rupert-button").on("click", function (event) {
         }).then(function (response) {
             console.log(response)
         });
-        robotTalk()
+        robotTalk();
     }
+});
+
+database.ref().on("child_added", function (childSnapshot) {
+
+    // Store everything into a variable.
+    var ans = $("#rupert-answer").append(childSnapshot.val().text)
+    ans.append($("<hr>"))
+    $("#rupert-input").val("")
+    //append message to bubble on left side
+}, function (errorObject) {
+    console.log("Errors handled: " + errorObject.code);
 });
