@@ -87,10 +87,6 @@ h2 {
   height: 200px;
   overflow: auto;
 }
-#movieResults {
-  height: 810px;
-  overflow: auto;
-}
 #footer {
   position: static;
   height: 90px;
