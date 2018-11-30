@@ -79,7 +79,7 @@ h2 {
     opacity: 0.7;
     font-family: cursive;
   }
-#ruAnswer {
+#ruAnswer, #card3 {
   height: 531px;
   overflow: auto;
 }
@@ -132,4 +132,12 @@ h2 {
 
 #card3 {
     background-color: black;
+}
+
+.movie-title {
+    font-weight: bolder;
+}
+
+.movie-plot {
+    font-family: cursive;
 }
