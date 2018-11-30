@@ -1,3 +1,6 @@
+var textarea = document.getElementById('rupert-input');
+textarea.scrollTop = textarea.scrollHeight;
+
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyC9oG6iJbZAA91mZRFG7aLBUrlfZ9Be-c0",
@@ -49,7 +52,7 @@ $("#rupert-button").on("click", function (event) {
             $.ajax({
                 url: "https://dialogflow.googleapis.com/v2/projects/rupert-1e1d0/agent/sessions/491284b3-f02d-993f-4d64-b7cdd12f9cca:detectIntent",
                 method: "POST",
-                headers: { 'Authorization': "Bearer ya29.c.ElpkBlINVYQXsVc11iK4FwYtbrBrG-ku_chSet6QkWAVDMN3Cg2d2rFbsT-0gpD5WEzf0M086Ql5fWDO19CRvPlB1wdtFK9NHH6C9DEnZI2CEjIPu7F3nuHpKF8" },
+                headers: { 'Authorization': "Bearer ya29.c.ElpkBtZz6DzAZDD935IBTZzY6onT-vA1vt7Jnfbwm2QHbRcit8MmoFxHbC2OLh81NDmidx7hYR6WV6oupNE1JkBUCAVG1ZTQnhfM9m0NA79A15vxbEL5-L6UgR4" },
 
                 // get jarren's $(gcloud auth application-default print-access-token)
                 contentType: "application/json; charset=utf-8",
@@ -204,7 +207,7 @@ function movieTrailers(movieID){
 database.ref().on("child_added", function (childSnapshot) {
 
     // Store everything into a variable.
-    var ans = $("#rupert-answer").append(childSnapshot.val().text)
+    var ans = $("#chatty").append(childSnapshot.val().text)
     ans.append($("<hr>"))
     $("#rupert-input").val("")
     //append message to bubble on left side
