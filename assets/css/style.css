@@ -72,7 +72,10 @@ img {
     opacity: 0.7;
     font-family: cursive;
   }
-
+#chatty {
+  height: 300px;
+  overflow: auto;
+}
 #footer {
   position: static;
   height: 90px;
