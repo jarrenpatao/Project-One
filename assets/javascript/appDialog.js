@@ -175,7 +175,8 @@ $("#rupert-button").on("click", function (event) {
                     var name = response.results[i].original_title
                     var poster = "<img src=" + "'https://image.tmdb.org/t/p/w500" + response.results[i].poster_path + "'</img>";
                     // console.log(name)
-                    $("#ruAnswer").append(name + poster + "<hr>");
+                    var plot = response.results[i].overview
+                    $("#ruAnswer").append(name + poster + plot + "<hr>");
                     var movieID = response.results[i].id
                     // movie1 = response.results[0].id
                     //call trailers api with an ajax function
