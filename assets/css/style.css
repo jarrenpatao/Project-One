@@ -1,30 +1,23 @@
-nav {
-    
+/* MAIN ELEMENTS */
+nav {  
     background-size: 100%;
     background-color: black;
     block-size: 10%;
-}
-.navbar-brand {
-    color: cornsilk;
-    font-family: cursive;
 }
 body {
     background-size: 100%;
     background-image: url("unnamed.jpg");
 }
-#two, #three {
-    border-image-source: url("Frame_Border_Transparent_PNG_Clip_Art.png");
- /* I'll just leave the border image here--it doesn't work though.. */
+button {
+  color: cornsilk;
+  background-color:black;
 }
-
- button{
-    color: cornsilk;
-    background-color:black;
+input {
+  height: 100px;
 }
-
-#ruAnswer img {
-    max-height: 280px;
-    max-width: 100%;
+img {
+  border-radius: 5px 5px 0 0;
+}
 
 /* .form-group {
     block-size: 50%;
@@ -32,13 +25,7 @@ body {
     top: 50px; */
 
 
-/* } */
-
-input {
-    height: 100px;
-
-}
-
+/* CLASS */
 .container a {
     float: left;
     display: block;
@@ -47,7 +34,16 @@ input {
     padding: 14px 16px;
     text-decoration: none;
 }
+.navbar-brand {
+  color: cornsilk;
+  font-family: cursive;
+}
+.tmdb-attribution {
+  color: white;
+}
 
+
+/* MEDIA BREAKPOINTS */
 /* On screens that are 600px wide or less, make the menu links stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
     .container a {
@@ -56,36 +52,55 @@ input {
     }
 }
 
-
-#one{width:100px;min-height:100px;float:left;color:cornsilk;}
-#two{width:100px;display:inline-block;height:100px;color:cornsilk;}
-#three{width:100px;display:inline-block;height:100px;color:cornsilk;}
-
-
-.tmdb-attribution {
-    color: white;
+/* ID's */
+#one {
+  width:100px;
+  min-height:100px;
+  float:left;
+  color:cornsilk;
 }
-
-img {
-    border-radius: 5px 5px 0 0;
+#two, #three {
+  width:100px;
+  display:inline-block;
+  height:100px;
+  color:cornsilk;
+  border-image-source: url("Frame_Border_Transparent_PNG_Clip_Art.png");
 }
-#ruTalk button:hover {
+#card1 button:hover {
     opacity: 0.7;
     font-family: cursive;
   }
-
-#ruTalk {
-    background-color:cornsilk;
-    position: relative;
+#card1, #card2, #card3 {
+  background-color:cornsilk;
+  width: 80%;
+  height: 110%;
+  /* position: relative;
     top: 40px;
-    right: 50px;
-    width: 80%;
-    height: 110%;
-
+    right: 50px; */
 }
-
-
-#ruAnswer {
+#footer {
+  position: static;
+  height: 90px;
+  width: 100%;
+  background-color: cornsilk;
+  padding: 15px;
+  border-radius: 7px;
+  margin-top: 30px; 
+}
+#footer p {
+  color: black;
+  float: left;
+  position: relative;
+  top: 25%;
+}
+#footer img {
+  float: right;
+  height: 40px;
+  width: 40px;
+  position: relative;
+  top: 20%;
+}
+/* #card2 {
     background-color:cornsilk;
     position: relative;
     top: 40px;
@@ -93,8 +108,6 @@ img {
     height: 400%;
     right:70px;
 }
-
-
 #card3 {
     background-color:cornsilk;
     position: relative;
@@ -102,6 +115,8 @@ img {
     width: 80%;
     height: 400%;
     right:30px;
+} */
+#ruAnswer img {
+  max-height: 100%;
+  max-width: 100%;
 }
-
-
