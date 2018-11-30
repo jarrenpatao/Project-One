@@ -1,3 +1,21 @@
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyC9oG6iJbZAA91mZRFG7aLBUrlfZ9Be-c0",
+    authDomain: "rupert-1e1d0.firebaseapp.com",
+    databaseURL: "https://rupert-1e1d0.firebaseio.com",
+    projectId: "rupert-1e1d0",
+    storageBucket: "rupert-1e1d0.appspot.com",
+    messagingSenderId: "171909528066"
+};
+firebase.initializeApp(config);
+
+var database = firebase.database();
+
+function resetText() {
+    database.ref().remove();
+}
+resetText();
+
 var rupert
 $("#rupert-button").on("click", function (event) {
     event.preventDefault();
@@ -8,6 +26,13 @@ $("#rupert-button").on("click", function (event) {
     else {
         rupert = $("#rupert-input").val()
         $('#ruAnswer').empty();
+
+        var message = {
+            text: rupert,
+        };
+        // push to firebase
+        database.ref().push(message);
+        // test
 
         function robotTalk() {
             var thatData = JSON.stringify({
@@ -23,14 +48,25 @@ $("#rupert-button").on("click", function (event) {
             $.ajax({
                 url: "https://dialogflow.googleapis.com/v2/projects/rupert-1e1d0/agent/sessions/491284b3-f02d-993f-4d64-b7cdd12f9cca:detectIntent",
                 method: "POST",
+
                 headers: { 'Authorization': "Bearer ya29.c.ElpkBmbCWCGCq7fR86q98Uz7_eQLfWpPTxBEjwonOPSClqHEz1SOctmvou0vIzEO0hDm1e7rTzb70cxuirOi2Lu4YVUAZx0Y9CjDuqWNWBct1uDtGv0c5vGPVwo" },
+
                 // get jarren's $(gcloud auth application-default print-access-token)
                 contentType: "application/json; charset=utf-8",
                 data: thatData
             }).then(function (response) {
                 console.log(response);
                 var rupertAnswer = response.queryResult.fulfillmentText
-                $("#rupert-answer").text(rupertAnswer);
+                // $("#rupert-answer").text(rupertAnswer);
+
+                var message = {
+                    text: rupertAnswer,
+                    speaker: "rupert",
+                };
+
+                // push to firebase
+                database.ref().push(message);
+
 
                 if (response.queryResult.intent.displayName === "Popular") {
                     queryWanted = searchTerms.popular
@@ -141,6 +177,7 @@ $("#rupert-button").on("click", function (event) {
                 }
             });
         }
+
         // $.ajax({
         //     url: "https://cors-anywhere.herokuapp.com/https://api-gate2.movieglu.com/filmsComingSoon/?n=10",
         //     method: "GET",
@@ -160,4 +197,17 @@ $("#rupert-button").on("click", function (event) {
         // });
         robotTalk()
     }
+
+});
+
+database.ref().on("child_added", function (childSnapshot) {
+
+    // Store everything into a variable.
+    var ans = $("#rupert-answer").append(childSnapshot.val().text)
+    ans.append($("<hr>"))
+    $("#rupert-input").val("")
+    //append message to bubble on left side
+}, function (errorObject) {
+    console.log("Errors handled: " + errorObject.code);
+
 });
