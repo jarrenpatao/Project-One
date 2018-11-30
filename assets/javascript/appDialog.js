@@ -69,7 +69,10 @@ $("#rupert-button").on("click", function (event) {
 
                 // push to firebase
                 database.ref().push(message);
-
+                if (response.queryResult.intent.displayName === "In Theaters") {
+                    queryWanted = searchTerms.inTheaters
+                    movieSearch(queryWanted)
+                }
 
                 if (response.queryResult.intent.displayName === "Popular") {
                     queryWanted = searchTerms.popular
@@ -171,7 +174,7 @@ $("#rupert-button").on("click", function (event) {
                 method: "GET"
             }).then(function (response) {
                 console.log(response)
-                for (var i = 0; i < 3; i++) {
+                for (var i = 0; i < 7; i++) {
                     var name = response.results[i].original_title
                     var poster = "<img src=" + "'https://image.tmdb.org/t/p/w500" + response.results[i].poster_path + "'</img>";
                     // console.log(name)
@@ -214,7 +217,7 @@ function movieTrailers(movieID){
         url: "https://api.themoviedb.org/3/movie/" + movieID +"/videos" + "?api_key=2ed91169ed8d33d4c63c2dd7b3177958&language=en-US",
         method: "GET"
     }).then(function (response){
-        $("#card3").append("<iframe height='100%' src='https://www.youtube.com/embed/" + response.results[0].key + "'frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>")
+        $("#card3").append("<iframe height='100%' src='https://www.youtube.com/embed/" + response.results[0].key + "'frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>" + "<br>")
         console.log(response.results[0].key)
     })
 }
