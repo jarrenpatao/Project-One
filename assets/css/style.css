@@ -20,6 +20,9 @@ input {
 img {
   border-radius: 5px 5px 0 0;
 }
+h2 {
+  color: cornsilk;
+}
 
 /* .form-group {
     block-size: 50%;
@@ -28,6 +31,9 @@ img {
 
 
 /* CLASS */
+.container {
+  top: 0px;
+}
 .container a {
     float: left;
     display: block;
@@ -73,8 +79,16 @@ img {
     opacity: 0.7;
     font-family: cursive;
   }
+#ruAnswer {
+  height: 531px;
+  overflow: auto;
+}
 #chatty {
-  height: 300px;
+  height: 200px;
+  overflow: auto;
+}
+#movieResults {
+  height: 810px;
   overflow: auto;
 }
 #footer {
@@ -104,7 +118,8 @@ img {
   max-width: 100%;
 }
 #ruLogo {
-  margin-left: 25%;
+  margin-left: 35%;
+  margin-top: 2%;
 }
 #tmdb-logo{
   zoom: 50%;
