@@ -24,12 +24,6 @@ h2 {
   color: cornsilk;
 }
 
-/* .form-group {
-    block-size: 50%;
-    position: relative;
-    top: 50px; */
-
-
 /* CLASS */
 .container {
   top: 0px;
@@ -37,7 +31,6 @@ h2 {
 .container a {
     float: left;
     display: block;
-    /* color: white; */
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -51,40 +44,29 @@ h2 {
   color: white;
 }
 
-
-/* MEDIA BREAKPOINTS */
-/* On screens that are 600px wide or less, make the menu links stack on top of each other instead of next to each other
-@media screen and (max-width: 600px) {
-    .container a {
-        float: none;
-        width: 100%;
-    }
-} */
-
-
-
-/* ID's */
 #one {
-  /* width:100px; */
   min-height:100px;
-  /* float:left; */
   color:black;
-  /* display: flex; */
 
 }
 #two, #three {
-  /* width:100px; */
   display:inline-block;
   min-height:100px;
   color:black;
   border-image-source: url("Frame_Border_Transparent_PNG_Clip_Art.png");
-  /* display: flex; */
+
 }
 #ruTalk button:hover {
     opacity: 0.7;
     font-family: cursive;
   }
-#ruAnswer, #card3 {
+#ruAnswer {
+  height: 531px;
+  overflow: auto;
+  background-color: black;
+ 
+}
+#card3 {
   height: 531px;
   overflow: auto;
   background-color: black;
@@ -95,7 +77,7 @@ h2 {
   overflow: auto;
 }
 #footer {
-  position: static;
+  position: relative;
   height: 90px;
   width: 100%;
   background-color: cornsilk;
@@ -125,7 +107,8 @@ h2 {
 }
 #tmdb-logo{
   zoom: 50%;
-  float:right;
+  position: relative;
+
 }
 
 h2 {
@@ -138,8 +121,10 @@ h2 {
 
 .movie-title {
     font-weight: bolder;
+    color: white;
 }
 
 .movie-plot {
     font-family: cursive;
+    color:white;
 }
