@@ -37,7 +37,7 @@ h2 {
 }
 .navbar-brand {
   color: cornsilk;
-  font-family: cursive;
+  /* font-family: cursive; */
 }
 
 .tmdb-attribution {
@@ -60,20 +60,23 @@ h2 {
     opacity: 0.7;
     font-family: cursive;
   }
+#ruTalk {
+  padding: 10px;
+}
 #ruAnswer {
   height: 531px;
   overflow: auto;
   background-color: black;
- 
+  border-radius: 5px;
 }
 #card3 {
   height: 531px;
   overflow: auto;
   background-color: black;
- 
+  border-radius: 5px;
 }
 #chatty {
-  height: 250px;
+  height: 235px;
   overflow: auto;
 }
 #footer {
@@ -110,7 +113,9 @@ h2 {
   position: relative;
 
 }
-
+h1{
+  float: left;
+}
 h2 {
     color: cornsilk;
 }
@@ -127,4 +132,9 @@ h2 {
 .movie-plot {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:white;
+}
+
+
+.fa-jenkins {
+  color: white;
 }
