@@ -1,6 +1,7 @@
 var textarea = document.getElementById('rupert-input');
 textarea.scrollTop = textarea.scrollHeight;
-
+var actorsAsked = false
+console.log(actorsAsked)
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyC9oG6iJbZAA91mZRFG7aLBUrlfZ9Be-c0",
@@ -34,6 +35,35 @@ $("#rupert-button").on("click", function (event) {
     if ($("#rupert-input").val().trim() === "") {
         return;
     }
+    else if (actorsAsked) {
+        console.log("it's true!")
+        rupert = $("#rupert-input").val()
+        $('#ruAnswer').empty();
+        $('#card3').empty();
+
+        var message = {
+            text: rupert,
+        };
+        
+        database.ref().push(message);
+        
+        $.ajax({
+            url: "https://api.themoviedb.org/3/search/person?api_key=2ed91169ed8d33d4c63c2dd7b3177958&language=en-US&query=" + rupert + "&page=1&include_adult=false",
+            method: "GET"
+        }).then(function (response) {
+            console.log(response)
+            for (var i = 0; i < 3; i++) {
+                var name = response.results[0].known_for[i].original_title
+                var poster = "<img src=" + "'https://image.tmdb.org/t/p/w500" + response.results[0].known_for[i].poster_path + "'</img>";
+                var plot = response.results[0].known_for[i].overview
+                $("#ruAnswer").append("<div class='movie-title'>" + name + "</div>" + poster + "<div class='movie-plot'>" + plot + "</div>" + "<hr>");
+                var movieID = response.results[0].known_for[i].id
+                movieTrailers(movieID)
+            }
+    });
+        
+        actorsAsked = false
+    }
     else {
         rupert = $("#rupert-input").val()
         $('#ruAnswer').empty();
@@ -60,7 +90,7 @@ $("#rupert-button").on("click", function (event) {
             $.ajax({
                 url: "https://dialogflow.googleapis.com/v2/projects/rupert-1e1d0/agent/sessions/491284b3-f02d-993f-4d64-b7cdd12f9cca:detectIntent",
                 method: "POST",
-                headers: { 'Authorization': "Bearer ya29.c.ElplBhEbrr7y0pb12g0-IN3ik_XCxoouUKy4C4-H4tOnPNTuCowsthN9Y5f9GM3hJ3El7Okno7ClS6g2IE2wdA-epgdONr5_JEmRjsqUXIaUl6gkV004IxJhw4Q" },
+                headers: { 'Authorization': "Bearer ya29.c.ElplBoxQWQ2zhXutaYZgr2G1ODVmb1H7Bm7Vk_rQHwptKUWZfBB3V5FvVPoXTf3uTKAK5sWT-h-GHxqqeSw0lDz6CSAdKpbmNWVNK0jNLtP9EGMh1GtLoshoKkc" },
 
                 // get jarren's $(gcloud auth application-default print-access-token)
                 contentType: "application/json; charset=utf-8",
@@ -164,6 +194,11 @@ $("#rupert-button").on("click", function (event) {
                 if (response.queryResult.intent.displayName === "Default Fallback Intent") {
                     queryWanted = rupert
                     individualMovieSearch(queryWanted)
+                    
+                }
+                if (response.queryResult.intent.displayName === "Actors") {
+                    actorsAsked = true
+                    console.log(actorsAsked)
                     
                 }
             }).catch(function (err) {
