@@ -127,10 +127,9 @@ h2 {
 }
 
 .movie-plot {
-    font-family: cursive;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:white;
 }
-
 .fa-jenkins {
   color: white;
 }
