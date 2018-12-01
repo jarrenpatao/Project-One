@@ -63,7 +63,7 @@ h2 {
 #ruAnswer {
   height: 531px;
   overflow: auto;
-  background-color: silver;
+  background-color: black;
  
 }
 #card3 {
@@ -121,8 +121,10 @@ h2 {
 
 .movie-title {
     font-weight: bolder;
+    color: white;
 }
 
 .movie-plot {
     font-family: cursive;
+    color:white;
 }
