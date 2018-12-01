@@ -64,13 +64,13 @@ h2 {
   height: 531px;
   overflow: auto;
   background-color: black;
- 
+  border-radius: 5px;
 }
 #card3 {
   height: 531px;
   overflow: auto;
   background-color: black;
- 
+  border-radius: 5px;
 }
 #chatty {
   height: 250px;
