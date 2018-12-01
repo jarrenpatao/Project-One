@@ -28,8 +28,6 @@ var searchTerms = {
 }
 
 $('#rupert-button').on('click', function(event) {
-  $('#ruLogo').removeClass('animated fadeIn');
-  $('#ruLogo').addClass('animated fadeIn');
-  // $('#yourElement').addClass('animated rotateIn infinite');
+  $('#ruLogo').fadeOut(500).fadeIn(500);
 });
 
