@@ -1,3 +1,5 @@
+
+
 var textarea = document.getElementById('rupert-input');
 textarea.scrollTop = textarea.scrollHeight;
 var actorsAsked = false
@@ -21,7 +23,7 @@ function resetText() {
 resetText();
 
 var ruTalk = $('#chatty')
-ruTalk.animate({
+ruTalk.velocity({
     scrollTop: ruTalk.get(0).scrollHeight
 }, 1000);
 
@@ -59,7 +61,9 @@ $("#rupert-button").on("click", function (event) {
                 $("#ruAnswer").append("<div class='movie-title'>" + name + "</div>" + poster + "<div class='movie-plot'>" + plot + "</div>" + "<hr>");
                 var movieID = response.results[0].known_for[i].id
                 movieTrailers(movieID)
+                
             }
+        
     });
         
         actorsAsked = false
@@ -90,7 +94,7 @@ $("#rupert-button").on("click", function (event) {
             $.ajax({
                 url: "https://dialogflow.googleapis.com/v2/projects/rupert-1e1d0/agent/sessions/491284b3-f02d-993f-4d64-b7cdd12f9cca:detectIntent",
                 method: "POST",
-                headers: { 'Authorization': "Bearer ya29.c.ElplBhmVJHonDv48wwOsOMMXJkMaoLe-8Tflp8EB_rnZqr-7AJaNu8XnmNGgpw-dZ5gpnXOjrosVW44OZHEkSeRnlsQxqkedqcQ3lVbhDX2oykayrS1o1Vna9XE" },
+                headers: { 'Authorization': "Bearer ya29.c.ElplBpiQE6UBlszpJhbg4BgrNHe5-OiFI9sB6H09uA6jWHR3WYB9Hi4BCc78gloEPPgsr0Ew4cpVbMTkLesvqeLgWMQ8qMEHfV-md_n-zC-pGa4sk8rh30jKYfE" },
 
                 // get jarren's $(gcloud auth application-default print-access-token)
                 contentType: "application/json; charset=utf-8",
@@ -239,14 +243,15 @@ $("#rupert-button").on("click", function (event) {
                 for (var i = 0; i < 7; i++) {
                     var name = response.results[i].original_title
                     var poster = "<img src=" + "'https://image.tmdb.org/t/p/w500" + response.results[i].poster_path + "'</img>";
-                    var plot = response.results[i].overview
+                    var plot = response.results[i].overview;
                     $("#ruAnswer").append("<div class='movie-title'>" + name + "</div>" + poster + "<div class='movie-plot'>" + plot + "</div>" + "<hr>");
-                    var movieID = response.results[i].id
-                    movieTrailers(movieID)
+                    var movieID = response.results[i].id;
+                    movieTrailers(movieID);
                 }
             });
         }
-        robotTalk()
+        robotTalk();
+
     }
 });
 

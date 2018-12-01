@@ -26,3 +26,10 @@ var searchTerms = {
     bestWar: "with_genres=10752&sort_by=vote_average.desc&vote_count.gte=100",
     bestWestern: "with_genres=37&sort_by=vote_average.desc&vote_count.gte=100",
 }
+
+$('#rupert-button').on('click', function(event) {
+  $('#ruLogo').removeClass('animated fadeIn');
+  $('#ruLogo').addClass('animated fadeIn');
+  // $('#yourElement').addClass('animated rotateIn infinite');
+});
+
