@@ -44,7 +44,7 @@ $("#rupert-button").on("click", function (event) {
         var message = {
             text: rupert,
         };
-        
+
         database.ref().push(message);
         
         $.ajax({
@@ -90,7 +90,7 @@ $("#rupert-button").on("click", function (event) {
             $.ajax({
                 url: "https://dialogflow.googleapis.com/v2/projects/rupert-1e1d0/agent/sessions/491284b3-f02d-993f-4d64-b7cdd12f9cca:detectIntent",
                 method: "POST",
-                headers: { 'Authorization': "Bearer ya29.c.ElplBoxQWQ2zhXutaYZgr2G1ODVmb1H7Bm7Vk_rQHwptKUWZfBB3V5FvVPoXTf3uTKAK5sWT-h-GHxqqeSw0lDz6CSAdKpbmNWVNK0jNLtP9EGMh1GtLoshoKkc" },
+                headers: { 'Authorization': "Bearer ya29.c.ElplBhmVJHonDv48wwOsOMMXJkMaoLe-8Tflp8EB_rnZqr-7AJaNu8XnmNGgpw-dZ5gpnXOjrosVW44OZHEkSeRnlsQxqkedqcQ3lVbhDX2oykayrS1o1Vna9XE" },
 
                 // get jarren's $(gcloud auth application-default print-access-token)
                 contentType: "application/json; charset=utf-8",
