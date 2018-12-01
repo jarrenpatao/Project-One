@@ -60,6 +60,9 @@ h2 {
     opacity: 0.7;
     font-family: cursive;
   }
+#ruTalk {
+  padding: 10px;
+}
 #ruAnswer {
   height: 531px;
   overflow: auto;
@@ -73,7 +76,7 @@ h2 {
   border-radius: 5px;
 }
 #chatty {
-  height: 250px;
+  height: 235px;
   overflow: auto;
 }
 #footer {
@@ -127,9 +130,10 @@ h2 {
 }
 
 .movie-plot {
-    font-family: cursive;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:white;
 }
+
 
 .fa-jenkins {
   color: white;
