@@ -60,7 +60,7 @@ $("#rupert-button").on("click", function (event) {
             $.ajax({
                 url: "https://dialogflow.googleapis.com/v2/projects/rupert-1e1d0/agent/sessions/491284b3-f02d-993f-4d64-b7cdd12f9cca:detectIntent",
                 method: "POST",
-                headers: { 'Authorization': "Bearer ya29.c.ElpkBk4AABSLJ2t9u-sL5gIqAxtNiF76o7B9wS9S_xaZzGrjHqQBbY7OUbeTKEkX6H4RJDjtLBU3bGXYc86O8z8qftWqAnT-QJbAD9zgidwOo8gZYTt-VxCiUF0" },
+                headers: { 'Authorization': "Bearer ya29.c.ElplBhEbrr7y0pb12g0-IN3ik_XCxoouUKy4C4-H4tOnPNTuCowsthN9Y5f9GM3hJ3El7Okno7ClS6g2IE2wdA-epgdONr5_JEmRjsqUXIaUl6gkV004IxJhw4Q" },
 
                 // get jarren's $(gcloud auth application-default print-access-token)
                 contentType: "application/json; charset=utf-8",
@@ -164,7 +164,7 @@ $("#rupert-button").on("click", function (event) {
                 if (response.queryResult.intent.displayName === "Default Fallback Intent") {
                     queryWanted = rupert
                     individualMovieSearch(queryWanted)
-                    individualMovieInfo(queryWanted)
+                    
                 }
             }).catch(function (err) {
                 console.log(err.responseText)
