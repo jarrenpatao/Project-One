@@ -23,14 +23,14 @@ function resetText() {
 resetText();
 
 var ruTalk = $('#chatty')
-ruTalk.velocity({
-    scrollTop: ruTalk.get(0).scrollHeight
+ruTalk.animate({
+    scrollTop: ruTalk.get(0).scrollHeight   
 }, 1000);
 
 var rupert;
 $("#rupert-button").on("click", function (event) {
     event.preventDefault();
-    ruTalk.velocity({
+    ruTalk.animate({
         scrollTop: ruTalk.get(0).scrollHeight
     }, 1000);
 
@@ -94,7 +94,7 @@ $("#rupert-button").on("click", function (event) {
             $.ajax({
                 url: "https://dialogflow.googleapis.com/v2/projects/rupert-1e1d0/agent/sessions/491284b3-f02d-993f-4d64-b7cdd12f9cca:detectIntent",
                 method: "POST",
-                headers: { 'Authorization': "Bearer ya29.c.ElplBpiQE6UBlszpJhbg4BgrNHe5-OiFI9sB6H09uA6jWHR3WYB9Hi4BCc78gloEPPgsr0Ew4cpVbMTkLesvqeLgWMQ8qMEHfV-md_n-zC-pGa4sk8rh30jKYfE" },
+                headers: { 'Authorization': "Bearer ya29.c.ElplBmdSfsh-Z0xBAKI3qSEMw7GRo2J37u1I4IknMJ9QcThkkRlF29P8zCEJGLWOQgZ2GYwZIXo44BzUiJlhGc9iQFw5BaymhSFY743u-9V2uPhuWq7llwDIiJg" },
 
                 // get jarren's $(gcloud auth application-default print-access-token)
                 contentType: "application/json; charset=utf-8",
@@ -247,6 +247,7 @@ $("#rupert-button").on("click", function (event) {
                     $("#ruAnswer").append("<div class='movie-title'>" + name + "</div>" + poster + "<div class='movie-plot'>" + plot + "</div>" + "<hr>");
                     var movieID = response.results[i].id;
                     movieTrailers(movieID);
+                    
                 }
             });
         }
@@ -254,7 +255,6 @@ $("#rupert-button").on("click", function (event) {
 
     }
 });
-
 
 function movieTrailers(movieID){
     $.ajax({
