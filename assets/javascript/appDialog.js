@@ -60,7 +60,7 @@ $("#rupert-button").on("click", function (event) {
             $.ajax({
                 url: "https://dialogflow.googleapis.com/v2/projects/rupert-1e1d0/agent/sessions/491284b3-f02d-993f-4d64-b7cdd12f9cca:detectIntent",
                 method: "POST",
-                headers: { 'Authorization': "Bearer ya29.c.ElpkBtZz6DzAZDD935IBTZzY6onT-vA1vt7Jnfbwm2QHbRcit8MmoFxHbC2OLh81NDmidx7hYR6WV6oupNE1JkBUCAVG1ZTQnhfM9m0NA79A15vxbEL5-L6UgR4" },
+                headers: { 'Authorization': "Bearer ya29.c.ElpkBk4AABSLJ2t9u-sL5gIqAxtNiF76o7B9wS9S_xaZzGrjHqQBbY7OUbeTKEkX6H4RJDjtLBU3bGXYc86O8z8qftWqAnT-QJbAD9zgidwOo8gZYTt-VxCiUF0" },
 
                 // get jarren's $(gcloud auth application-default print-access-token)
                 contentType: "application/json; charset=utf-8",
@@ -161,14 +161,34 @@ $("#rupert-button").on("click", function (event) {
                     queryWanted = searchTerms.bestWestern
                     movieSearch(queryWanted)
                 }
-
-
+                if (response.queryResult.intent.displayName === "Default Fallback Intent") {
+                    queryWanted = rupert
+                    individualMovieSearch(queryWanted)
+                    individualMovieInfo(queryWanted)
+                }
             }).catch(function (err) {
                 console.log(err.responseText)
             })
 
         };
+        function individualMovieSearch(queryWanted){
+            var queryURL = "https://api.themoviedb.org/3/search/movie?api_key=2ed91169ed8d33d4c63c2dd7b3177958&query=" 
+            + queryWanted
+            
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function (response) {
+                console.log(response)
+                var movieID = response.results[0].id
+                movieTrailers(movieID)
+                var name = response.results[0].original_title
+        var poster = "<img src=" + "'https://image.tmdb.org/t/p/w500" + response.results[0].poster_path + "'</img>";
+        var plot = response.results[0].overview
+        $("#ruAnswer").append("<div class='movie-title'>" + name + "</div>" + poster + "<div class='movie-plot'>" + plot + "</div>" + "<hr>");
 
+        });
+    }
         function movieSearch(queryWanted) {
 
             var queryURL =
@@ -184,21 +204,15 @@ $("#rupert-button").on("click", function (event) {
                 for (var i = 0; i < 7; i++) {
                     var name = response.results[i].original_title
                     var poster = "<img src=" + "'https://image.tmdb.org/t/p/w500" + response.results[i].poster_path + "'</img>";
-                    // console.log(name)
                     var plot = response.results[i].overview
                     $("#ruAnswer").append("<div class='movie-title'>" + name + "</div>" + poster + "<div class='movie-plot'>" + plot + "</div>" + "<hr>");
                     var movieID = response.results[i].id
-                    // movie1 = response.results[0].id
-                    //call trailers api with an ajax function
                     movieTrailers(movieID)
-                    // movieTrailers(movie1)
                 }
             });
         }
-
         robotTalk()
     }
-
 });
 
 

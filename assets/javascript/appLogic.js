@@ -24,5 +24,5 @@ var searchTerms = {
     bestTvMovie: "with_genres=10770&sort_by=vote_average.desc&vote_count.gte=100",
     bestThriller: "with_genres=53&sort_by=vote_average.desc&vote_count.gte=100",
     bestWar: "with_genres=10752&sort_by=vote_average.desc&vote_count.gte=100",
-    bestWestern: "with_genres=37&sort_by=vote_average.desc&vote_count.gte=100"
+    bestWestern: "with_genres=37&sort_by=vote_average.desc&vote_count.gte=100",
 }
