@@ -30,7 +30,7 @@ ruTalk.velocity({
 var rupert;
 $("#rupert-button").on("click", function (event) {
     event.preventDefault();
-    ruTalk.velocity({
+    ruTalk.animate({
         scrollTop: ruTalk.get(0).scrollHeight
     }, 1000);
 
