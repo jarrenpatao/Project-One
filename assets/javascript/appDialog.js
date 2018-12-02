@@ -46,9 +46,11 @@ $("#rupert-button").on("click", function (event) {
         var message = {
             text: rupert,
         };
-
+        var fakeResponse = {
+            text : "Here are three popular movies that actor is known for."
+        }
         database.ref().push(message);
-        
+        database.ref().push(fakeResponse)
         $.ajax({
             url: "https://api.themoviedb.org/3/search/person?api_key=2ed91169ed8d33d4c63c2dd7b3177958&language=en-US&query=" + rupert + "&page=1&include_adult=false",
             method: "GET"
@@ -94,7 +96,7 @@ $("#rupert-button").on("click", function (event) {
             $.ajax({
                 url: "https://dialogflow.googleapis.com/v2/projects/rupert-1e1d0/agent/sessions/491284b3-f02d-993f-4d64-b7cdd12f9cca:detectIntent",
                 method: "POST",
-                headers: { 'Authorization': "Bearer ya29.c.ElplBmdSfsh-Z0xBAKI3qSEMw7GRo2J37u1I4IknMJ9QcThkkRlF29P8zCEJGLWOQgZ2GYwZIXo44BzUiJlhGc9iQFw5BaymhSFY743u-9V2uPhuWq7llwDIiJg" },
+                headers: { 'Authorization': "Bearer ya29.c.ElpmBq8NOVuZq4Zb0Yu5EZn-IAGL01xvydl1u5BdWwh0oprnh-GUInBEnYVxUJIX_HzWr0SvZM_YTCWCSlayrFO9GBdEEDjKsHwSmZdHaFOVgAulaP4mgaKgWG0" },
 
                 // get jarren's $(gcloud auth application-default print-access-token)
                 contentType: "application/json; charset=utf-8",
