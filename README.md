@@ -1,6 +1,14 @@
 # Project-One
 first class group assignment
 
+# README.md
+
+Rupert, welcomes you! Please type a general greeting to queue Rupert response.
+
+- You may search through individual movies by searching for the Movie Title 
+- You may search through the top three movies by a specific actor by queuing the search with the word "actor", and then entering the actor's name.
+- You may search through movie genres by queuing the search with the word "genre", and then entering the specific genre name (e.g. Horror)
+- You may search through popular movies by queuing the search with the word "popular".
 
 **Pseudocode**
 
@@ -30,5 +38,3 @@ Rupert will ask if the user wants to look up a movie
            Clicking on movie time will re-direct to fandango or some shit to buy the ticket
  ***??? (Unrecogized input)*** 
    Fallback response
-
-
