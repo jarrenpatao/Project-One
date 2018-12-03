@@ -13,6 +13,7 @@ button {
   color: cornsilk;
   background-color:black;
   border-radius: 6px;
+  font-family: fantasy;
 }
 input {
   height: 100px;
@@ -37,7 +38,7 @@ h2 {
 }
 .navbar-brand {
   color: cornsilk;
-  /* font-family: cursive; */
+  font-family: cursive;
 }
 
 .tmdb-attribution {
@@ -47,14 +48,12 @@ h2 {
 #one {
   min-height:100px;
   color:black;
-
 }
 #two, #three {
   display:inline-block;
   min-height:100px;
   color:black;
   border-image-source: url("Frame_Border_Transparent_PNG_Clip_Art.png");
-
 }
 #ruTalk button:hover {
     opacity: 0.7;
@@ -66,7 +65,7 @@ h2 {
 #ruAnswer {
   height: 531px;
   overflow: auto;
-  background-color: black;
+  background-image: url("curtain.png");
   border-radius: 5px;
 }
 #card3 {
@@ -83,22 +82,24 @@ h2 {
   position: relative;
   height: 90px;
   width: 100%;
-  background-color: cornsilk;
+  
   padding: 35px;
   border-radius: 7px;
   margin-top: 30px; 
 }
 #footer p {
-  color: black;
+  color:cornsilk;
   float: left;
   position: relative;
-  top: 45%;
+  top: 50%;
+  font-family: cursive;
 }
 #footer img {
   float: right;
   height: 70px;
   width: 150px;
   position: relative;
+  
 }
 #ruAnswer img {
   max-height: 100%;
@@ -116,8 +117,9 @@ h2 {
 h1{
   float: left;
 }
-h2 {
+h3 {
     color: cornsilk;
+    font-family: cursive;
 }
 
 #card3 {
@@ -137,4 +139,8 @@ h2 {
 
 .fa-jenkins {
   color: white;
+}
+
+#rupert-input {
+font-family: fantasy;
 }
