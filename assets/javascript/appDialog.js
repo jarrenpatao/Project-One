@@ -96,7 +96,7 @@ $("#rupert-button").on("click", function (event) {
             $.ajax({
                 url: "https://dialogflow.googleapis.com/v2/projects/rupert-1e1d0/agent/sessions/491284b3-f02d-993f-4d64-b7cdd12f9cca:detectIntent",
                 method: "POST",
-                headers: { 'Authorization': "Bearer ya29.c.ElpmBq8NOVuZq4Zb0Yu5EZn-IAGL01xvydl1u5BdWwh0oprnh-GUInBEnYVxUJIX_HzWr0SvZM_YTCWCSlayrFO9GBdEEDjKsHwSmZdHaFOVgAulaP4mgaKgWG0" },
+                headers: { 'Authorization': "Bearer ya29.c.ElpnBhp2xsvAzRe-cM2TLkmJey3lu7jIMrrfe05LeUrP0eDldst3d2WbuqEniZTj--oS0dqYoPJBvg1SKKPMl3vPRTlzDwMAXDk3onO8nq8L8Fc7pqRZuHwFV-Q" },
 
                 // get jarren's $(gcloud auth application-default print-access-token)
                 contentType: "application/json; charset=utf-8",
