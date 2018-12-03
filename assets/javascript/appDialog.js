@@ -2,8 +2,8 @@
 
 var textarea = document.getElementById('rupert-input');
 textarea.scrollTop = textarea.scrollHeight;
-var actorsAsked = false
-console.log(actorsAsked)
+var actorsAsked = false;
+
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyC9oG6iJbZAA91mZRFG7aLBUrlfZ9Be-c0",
@@ -38,7 +38,6 @@ $("#rupert-button").on("click", function (event) {
         return;
     }
     else if (actorsAsked) {
-        console.log("it's true!")
         rupert = $("#rupert-input").val()
         $('#ruAnswer').empty();
         $('#card3').empty();
@@ -55,7 +54,6 @@ $("#rupert-button").on("click", function (event) {
             url: "https://api.themoviedb.org/3/search/person?api_key=2ed91169ed8d33d4c63c2dd7b3177958&language=en-US&query=" + rupert + "&page=1&include_adult=false",
             method: "GET"
         }).then(function (response) {
-            console.log(response)
             for (var i = 0; i < 3; i++) {
                 var name = response.results[0].known_for[i].original_title
                 var poster = "<img src=" + "'https://image.tmdb.org/t/p/w500" + response.results[0].known_for[i].poster_path + "'</img>";
@@ -102,7 +100,6 @@ $("#rupert-button").on("click", function (event) {
                 contentType: "application/json; charset=utf-8",
                 data: thatData
             }).then(function (response) {
-                console.log(response);
                 var rupertAnswer = response.queryResult.fulfillmentText
 
                 var message = {
@@ -203,9 +200,7 @@ $("#rupert-button").on("click", function (event) {
                     
                 }
                 if (response.queryResult.intent.displayName === "Actors") {
-                    actorsAsked = true
-                    console.log(actorsAsked)
-                    
+                    actorsAsked = true;
                 }
             }).catch(function (err) {
                 console.log(err.responseText)
@@ -220,7 +215,6 @@ $("#rupert-button").on("click", function (event) {
                 url: queryURL,
                 method: "GET"
             }).then(function (response) {
-                console.log(response)
                 var movieID = response.results[0].id
                 movieTrailers(movieID)
                 var name = response.results[0].original_title
@@ -241,7 +235,6 @@ $("#rupert-button").on("click", function (event) {
                 url: queryURL,
                 method: "GET"
             }).then(function (response) {
-                console.log(response)
                 for (var i = 0; i < 7; i++) {
                     var name = response.results[i].original_title
                     var poster = "<img src=" + "'https://image.tmdb.org/t/p/w500" + response.results[i].poster_path + "'</img>";
@@ -264,7 +257,6 @@ function movieTrailers(movieID){
         method: "GET"
     }).then(function (response){
         $("#card3").append("<iframe height='50%' src='https://www.youtube.com/embed/" + response.results[0].key + "'frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>" + "<br>")
-        console.log(response.results[0].key)
     })
 }
 
