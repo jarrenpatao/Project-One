@@ -1,6 +1,19 @@
 # Project-One
 first class group assignment
 
+# Synopsis
+
+An app that uses a dialogflow-based chatbot to understand what a user is asking in terms of movies, and then show the movie terms requested using movie posters, plots, and trailers.
+
+
+# Motivation
+
+We wanted an app that would find movie info and trailers all-in-one without having to go to specific imdb pages or youtube and typing in searches for the trailers. Originally we wanted to include user location and find movies playing nearby, but the movieGlu api stopped working.
+
+# Code
+
+We used Javascript, Jquery, materialize bootstrap, firebase, as well as tmdb (The Movie Database) apis and dialogflow apis.
+
 # README.md
 
 Rupert, welcomes you! Please type a general greeting to queue Rupert response.
