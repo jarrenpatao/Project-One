@@ -1,19 +1,18 @@
 /* MAIN ELEMENTS */
 nav {  
-    background-size: 100%;
-    background-color: black;
-    block-size: 10%;
+  background-size: 100%;
+  background-color: black;
+  block-size: 10%;
 }
 body {
-    background-size: 100%;
-    background-image: url("unnamed.jpg");
+  background-size: 100%;
+  background-color: #666;
 }
 button {
   margin: 5px;
-  color: cornsilk;
+  color: ivory;
   background-color:black;
   border-radius: 6px;
-  font-family: fantasy;
 }
 input {
   height: 100px;
@@ -21,8 +20,8 @@ input {
 img {
   border-radius: 5px 5px 0 0;
 }
-h2 {
-  color: cornsilk;
+h1, h2, h3 {
+  color: ivory;
 }
 
 /* CLASS */
@@ -30,43 +29,69 @@ h2 {
   top: 0px;
 }
 .container a {
-    float: left;
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.card {
+  background-color: ivory;
 }
 .navbar-brand {
-  color: cornsilk;
-  font-family: cursive;
+  color: ivory;
 }
-
+.movie-title {
+  font-weight: bolder;
+  color: ivory;
+}
+.movie-plot {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color:ivory;
+}
+.fa-i-cursor {
+  float: left;
+}
+/* TMDB ATTRITION */
 .tmdb-attribution {
-  color: white;
+  color: ivory;
+}
+#tmdb-logo{
+  zoom: 50%;
+  position: relative;
 }
 
+/* ID'S */
 #one {
-  min-height:100px;
-  color:black;
+  min-height: 100px;
+  color: black;
 }
 #two, #three {
   display:inline-block;
   min-height:100px;
   color:black;
-  border-image-source: url("Frame_Border_Transparent_PNG_Clip_Art.png");
 }
-#ruTalk button:hover {
+#ivoryTalk button:hover {
     opacity: 0.7;
-    font-family: cursive;
-  }
-#ruTalk {
+}
+#ivoryTalk {
   padding: 10px;
 }
-#ruAnswer {
+#ivoryLogo {
+  margin-left: 35%;
+  margin-top: 2%;
+}
+#ivory-input {
+  font-weight: bold;
+}
+#ivoryAnswer {
   height: 531px;
   overflow: auto;
-  background-image: url("curtain.png");
   border-radius: 5px;
+}
+#ivoryAnswer img {
+  max-height: 100%;
+  max-width: 100%;
 }
 #card3 {
   height: 531px;
@@ -74,6 +99,7 @@ h2 {
   background-color: black;
   border-radius: 5px;
 }
+
 #chatty {
   height: 235px;
   overflow: auto;
@@ -82,65 +108,19 @@ h2 {
   position: relative;
   height: 90px;
   width: 100%;
-  
   padding: 35px;
   border-radius: 7px;
   margin-top: 30px; 
 }
 #footer p {
-  color:cornsilk;
+  color:ivory;
   float: left;
   position: relative;
   top: 50%;
-  font-family: cursive;
 }
 #footer img {
   float: right;
   height: 70px;
   width: 150px;
-  position: relative;
-  
-}
-#ruAnswer img {
-  max-height: 100%;
-  max-width: 100%;
-}
-#ruLogo {
-  margin-left: 35%;
-  margin-top: 2%;
-}
-#tmdb-logo{
-  zoom: 50%;
-  position: relative;
-
-}
-h1{
-  float: left;
-}
-h3 {
-    color: cornsilk;
-    font-family: cursive;
-}
-
-#card3 {
-    background-color: black;
-}
-
-.movie-title {
-    font-weight: bolder;
-    color: white;
-}
-
-.movie-plot {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:white;
-}
-
-
-.fa-jenkins {
-  color: white;
-}
-
-#rupert-input {
-font-family: fantasy;
+  position: relative; 
 }
